@@ -87,14 +87,14 @@ function ComicRenderer(props) {
         <meta property="og:url"
               content={window.location.href}/>
         <meta property="og:image"
-              content={getComicImage(comic)}/>
+              content={(getComicImage(comic)) ? getComicImage(comic) : comic.thumbnail}/>
         <meta property="og:description"
               content={comic.description}/>
       </Helmet>
       <div className="comic comic--phone">
         <h1 className="comic__title">{comic.title}</h1>
         <div className="comic__hero">
-          <img src={getComicImage(comic)}/>
+          <img src={(getComicImage(comic)) ? getComicImage(comic) : comic.thumbnail}/>
         </div>
         <p className="comic__description"
            dangerouslySetInnerHTML={{__html: comic.description}}/>
@@ -105,7 +105,7 @@ function ComicRenderer(props) {
       <div className="comic comic__portrait-tablet">
         <div className="comic__portrait-tablet__wrapper">
           <div className="comic__hero">
-            <img src={head(comic.images)}/>
+            <img src={(head(comic.images)) ? head(comic.images) : comic.thumbnail}/>
           </div>
           <div className="comic__portrait-tablet__information">
             <h1 className="comic__title">{comic.title}</h1>
@@ -125,6 +125,7 @@ const COMIC_QUERY = gql`query ($id: Int!) {
     id
     title
     images
+    thumbnail
     description
     characters {
       id

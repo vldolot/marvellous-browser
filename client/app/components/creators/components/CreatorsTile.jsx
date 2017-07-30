@@ -28,7 +28,7 @@ export default function ComicTile(props) {
           onClick={e => e.preventDefault()}>
       <img src={creator.thumbnail}/>
       <div className="creator-tile__detail">
-        <h3>{creator.suffix && `(${creator.suffix})`} {creator.fullName}</h3>
+        <h3 className="text top-left">{creator.suffix && `(${creator.suffix})`} {creator.fullName}</h3>
       </div>
     </Link>
   )

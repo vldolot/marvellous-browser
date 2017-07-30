@@ -25,9 +25,10 @@ export default function CharacterTile(props) {
     <Link to={`/characters/${character.id}`}
           className={characterClass}
           style={styleForCharacter(character)}>
-      {character.hasImages && <img src={character.thumbnail}/>}
+      {/* character.hasImages && <img src={character.thumbnail}/> */}
+      <img src={character.thumbnail}/>
       <div className="character-tile__detail">
-        <h3>{character.name}</h3>
+        <h3 className="text top-left">{character.name}</h3>
       </div>
     </Link>
   )

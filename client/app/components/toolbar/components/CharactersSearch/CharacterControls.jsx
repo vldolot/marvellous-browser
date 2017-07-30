@@ -13,17 +13,17 @@ import {
 import { toggleToolbarSearch } from '../../actions'
 
 const getNumberOfComics = pathOr(0, ['characters', 'data', 'length'])
-const getOrderBy = path(['characters', 'orderBy'])
+// const getOrderBy = path(['characters', 'orderBy'])
 const getNameStartsWith = path(['characters', 'nameStartsWith'])
 
-const getLoadMoreCharactersQueryOptions = (props) => {
-  return {
-    nameStartsWith: getNameStartsWith(props),
-    start: getNumberOfComics(props),
-    limit: CHARACTERS_LOAD_MORE_LIMIT,
-    orderBy: getOrderBy(props)
-  }
-}
+// const getLoadMoreCharactersQueryOptions = (props) => {
+//   return {
+//     nameStartsWith: getNameStartsWith(props),
+//     start: getNumberOfComics(props),
+//     limit: CHARACTERS_LOAD_MORE_LIMIT,
+//     orderBy: getOrderBy(props)
+//   }
+// }
 
 const orderByVariable = (
   orderBy,
@@ -62,10 +62,10 @@ export function CharacterControls (props) {
         <i className="icon-search"/>
       </button>
 
-      <button className="creator__controls__load-more"
+      {/* <button className="creator__controls__load-more"
               onClick={() => props.dispatch(loadMoreCharacters(getLoadMoreCharactersQueryOptions(props)))}>
         Load More
-      </button>
+      </button> */}
     </div>
   )
 }

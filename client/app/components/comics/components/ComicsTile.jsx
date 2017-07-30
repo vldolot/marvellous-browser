@@ -25,9 +25,10 @@ export default function ComicTile(props) {
     <Link to={`/comics/${comic.id}`}
           className={comicClass}
           style={styleForComic(comic)}>
-      {comic.hasImages && <img src={comic.thumbnail}/>}
+      {/* comic.hasImages && <img src={comic.thumbnail}/> */}
+      <img src={comic.thumbnail}/>
       <div className="comic-tile__detail">
-        <h3>{comic.title}</h3>
+        <h3 className="text top-left">{comic.title}</h3>
       </div>
     </Link>
   )
